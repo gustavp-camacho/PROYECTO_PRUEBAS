@@ -1,0 +1,150 @@
+
+.body-container {
+    display: flex;
+    padding: 20px;
+  }
+  
+  /* Parte izquierda: promociones, ubicación y promociones */
+  .left-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+  
+  /* Promociones de eventos en la parte superior */
+  .event-promotion {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  /* Parte inferior dividida en dos verticalmente */
+  .bottom-section {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+  }
+  
+  /* Ubicación del estadio */
+  .stadium-location, .stadium-promotions {
+    background-color: #f0f0f0;
+    flex: 1;
+    padding: 20px;
+    margin: 0 10px;
+    border-radius: 8px;
+  }
+  
+  .stadium-location {
+    margin-left: 0;
+  }
+  
+  .stadium-promotions {
+    margin-right: 0;
+  }
+  
+  /* Parte derecha: calendario */
+  .right-section {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+  }
+  
+  p {
+    color: #666;
+  }
+  
+
+
+  .calendar-container {
+    max-width: 28rem;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+  
+  .calendar-header {
+    padding: 1rem;
+  }
+  
+  .header-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .month-button {
+    padding: 0.5rem;
+    border-radius: 9999px;
+    transition: background-color 0.2s;
+  }
+  
+  .month-button:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .month-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .weekdays-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .weekday {
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+  }
+  
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.25rem;
+  }
+  
+  .day-cell {
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .day-cell:hover:not(.current-day) {
+    background-color: #f3f4f6;
+    color: #374151;
+  }
+  
+  .current-day {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .current-day:hover {
+    background-color: #2563eb;
+  }
+  
+  .empty-cell {
+    height: 2.5rem;
+  }

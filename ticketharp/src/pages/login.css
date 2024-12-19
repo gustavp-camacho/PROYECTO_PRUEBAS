@@ -1,0 +1,103 @@
+/* Contenedor general del formulario */
+.login-container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #f5f5f5c9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Título */
+  .login-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Texto debajo del título */
+  .login-container p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos del formulario */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Etiquetas y entradas */
+  .login-form label {
+    font-size: 14px;
+    text-align: left;
+    color: #666;
+  }
+  
+  .login-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo del botón */
+  .login-btn {
+    padding: 8px 30px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Enlace para crear cuenta */
+  .create-account a {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .create-account a:hover {
+    text-decoration: underline;
+  }
+  
+
+  .account-options {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .forgot-password {
+    text-align: right;
+  }
+  
+  .forgot-password a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+  
+  .forgot-password a:hover {
+    text-decoration: underline;
+    color: #333;
+  }
+  
+  /* Ajustar el estilo existente de create-account si es necesario */
+  .create-account {
+    text-align: left;
+  }

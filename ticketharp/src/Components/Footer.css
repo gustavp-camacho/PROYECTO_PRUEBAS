@@ -1,0 +1,29 @@
+.footer {
+    background-color: #256;
+    color: maroon;
+    text-align: center;
+    padding: 20px;
+    position: end;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  .footer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  .footer ul li a {
+    color: rgb(156, 156, 163);
+    text-decoration: none;
+  }
+  
+  .footer ul li a:hover {
+    text-decoration: underline;
+  }
+  

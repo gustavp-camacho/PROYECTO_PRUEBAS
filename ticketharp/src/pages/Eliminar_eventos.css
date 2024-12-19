@@ -1,0 +1,68 @@
+.delete-events-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .logo img {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .delete-events-form {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .delete-events-form select,
+  .delete-events-form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .delete-events-form button {
+    padding: 12px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-events-form button:hover {
+    background-color: #c82333;
+  }
+  
+  .delete-events-form button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    margin-bottom: 15px;
+  }
+  
+  .delete-events-form a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .delete-events-form a:hover {
+    text-decoration: underline;
+  }
