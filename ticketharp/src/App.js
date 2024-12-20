@@ -16,8 +16,9 @@ import Paid from './Components/CompraExitosa.jsx';
 import Search from './pages/search.jsx';
 import AdminM from './pages/AdminMain.jsx';
 import AdminC from './Components/AdminCaro.jsx';
-import Elim_Events from './pages/Eliminar_eventos.jsx';
+import ElimEvents from './pages/Eliminar_eventos.jsx';
 import ResetP from './pages/PassFor.jsx';
+import RestC from './pages/restablecerC.jsx';
 
 function App() {
   const location = useLocation();
@@ -25,7 +26,7 @@ function App() {
   // Función para determinar si se debe mostrar el header/footer
   const shouldShowHeaderFooter = () => {
     const path = location.pathname;
-    return !['/', '/signup', '/Create_Event', '/Menu_Admin', '/Carousel_Admin', '/Eliminar_Eventos' , '/resetP'].includes(path)
+    return !['/', '/signup', '/Create_Event', '/Menu_Admin', '/Carousel_Admin', '/Eliminar_Eventos' , '/resetP', '/NewPass'].includes(path)
   };
 
   return (
@@ -44,8 +45,9 @@ function App() {
           <Route path="/Menu_Admin" element={<AdminM />} />
           <Route path="/paid" element={<Paid />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/Eliminar_Eventos" element={<Elim_Events />} />
+          <Route path="/Eliminar_Eventos" element={<ElimEvents />} />
           <Route path="/resetP" element={<ResetP />} />
+          <Route path="/NewPass" element={<RestC />} />
 
           <Route path="/Carousel_Admin" element={ <AdminC />} />
 

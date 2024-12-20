@@ -12,7 +12,7 @@ const { ObjectId } = mongoose.Types; // Importamos ObjectId correctamente
 
 // Inicializar la aplicación de Express
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 // Middleware para analizar JSON y habilitar CORS
 app.use(express.json());
@@ -134,7 +134,7 @@ app.post('/api/signup', async (req, res) => {
     await newUser.save();
     res.status(201).json({ 
       success: true,
-      message: 'Usuario registrado exitosamente' 
+      message: 'Usuario registrado correctamente' 
     });
   } catch (error) {
     console.error('Error en el registro:', error);

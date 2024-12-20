@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './PassFor.css';
+import './Eliminar_eventos.css';
 
 const DeleteEvents = () => {
   const [events, setEvents] = useState([]);
