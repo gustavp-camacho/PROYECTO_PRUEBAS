@@ -12,7 +12,7 @@ const { ObjectId } = mongoose.Types; // Importamos ObjectId correctamente
 
 // Inicializar la aplicación de Express
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 
 // Middleware para analizar JSON y habilitar CORS
 app.use(express.json());

@@ -1,6 +1,6 @@
 {
   "name": "ticketharp",
-  "version": "0.1.0", 
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@react-google-maps/api": "^2.20.3",
@@ -12,7 +12,7 @@
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.5", 
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.453.0",
@@ -29,13 +29,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node index.js",
-    "heroku-postbuild": "npm run build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "npm run build",
-    "dev": "react-scripts start"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -46,7 +43,7 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead", 
+      "not dead",
       "not op_mini all"
     ],
     "development": [
@@ -59,9 +56,5 @@
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "engines": {
-    "node": "18.x",
-    "npm": "9.x"
-  }
- }
+  "license": "ISC"
+}

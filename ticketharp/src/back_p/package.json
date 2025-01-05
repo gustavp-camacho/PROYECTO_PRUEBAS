@@ -1,0 +1,17 @@
+{
+    "name": "ticketharp-backend",
+    "version": "1.0.0",
+    "private": true,
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "express": "^4.21.1",
+      "cors": "^2.8.5",
+      "dotenv": "^16.4.5",
+      "mongoose": "^8.8.0",
+      "bcryptjs": "^2.4.3",
+      "jsonwebtoken": "^9.0.2"
+    }
+  }
