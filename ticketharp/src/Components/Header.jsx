@@ -59,7 +59,11 @@ const Header = () => {
     try {
       localStorage.removeItem('searchResults');
       const response = await fetch(
+<<<<<<< HEAD
         `${API_URL}/api/events/search?query=${encodeURIComponent(searchQuery)}`,
+=======
+        `http://18.216.192.185:5000/api/events/search?query=${encodeURIComponent(searchQuery)}`,
+>>>>>>> a61de8c94631b70ad58ce94c06abfe2f6378d579
         {
           method: 'GET',
           headers: {
