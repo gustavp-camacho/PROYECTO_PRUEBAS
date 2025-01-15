@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './Signup.css';
 
+// Definimos la URL base de la API usando variables de entorno
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,7 +15,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/signup', {
+      const response = await fetch(`${API_URL}/api/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, username })

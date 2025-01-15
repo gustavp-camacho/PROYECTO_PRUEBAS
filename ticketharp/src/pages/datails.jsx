@@ -3,6 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { CreditCard } from "lucide-react";
 import './details.css';
 
+// Definimos la URL base de la API usando variables de entorno
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const PaymentProcess = () => {
   const { eventId } = useParams();
   const navigate = useNavigate();
@@ -25,7 +28,7 @@ const PaymentProcess = () => {
 
     const fetchEventData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/events/${eventId}`);
+        const response = await fetch(`${API_URL}/api/events/${eventId}`);
         const data = await response.json();
         if (data.success) {
           setEventData(data.event);

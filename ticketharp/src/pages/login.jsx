@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
 
+// Definimos la URL base de la API usando variables de entorno
+const API_URL = process.env.REACT_APP_API_URL;
+//COMENTARIO DE QUE HE AJUSTADO MIS DIRECCIONES
 const Login = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -20,24 +23,22 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     setIsLoading(true);
     setError('');
-
+    
     try {
         console.log('Intentando login con:', formData);
-
-        const response = await fetch('http://localhost:5000/api/login', {
+        const response = await fetch(`${API_URL}/api/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(formData)
         });
-
         const data = await response.json();
         console.log('Respuesta completa del servidor:', data);
-
+        
         if (response.ok) {
             localStorage.setItem('token', data.token);
             
@@ -61,7 +62,6 @@ const Login = () => {
             } else {
               navigate('/Body');
             }
-            
         } else {
             setError(data.message || 'Error en la autenticación');
         }
@@ -77,7 +77,7 @@ const Login = () => {
     <div className="login-container">
       <h2>INICIAR SESIÓN</h2>
       <p>Bienvenido a la casa del mejor equipo de Beisbol del país</p>
-      
+
       <form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="email">Correo Electrónico</label>
         <input
@@ -90,7 +90,6 @@ const Login = () => {
           disabled={isLoading}
           required
         />
-
         <label htmlFor="password">Contraseña</label>
         <input
           type="password"
@@ -102,13 +101,11 @@ const Login = () => {
           disabled={isLoading}
           required
         />
-
         {error && (
           <div className="error-message" role="alert">
             {error}
           </div>
         )}
-
         <div className="account-options">
           <div className="create-account">
             <a href="/signup">CREAR CUENTA</a>
@@ -117,7 +114,6 @@ const Login = () => {
             <a href="/resetP">Olvidé mi contraseña</a>
           </div>
         </div>
-
         <button 
           type="submit" 
           className="login-btn"

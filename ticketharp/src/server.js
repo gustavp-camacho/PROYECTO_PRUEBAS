@@ -96,7 +96,7 @@ app.use((err, req, res, next) => {
 
 // Configura CORS específicamente
 const corsOptions = {
-  origin: 'http://localhost:3000', // Ajusta esto según tu frontend
+  origin: '*', // Ajusta esto según tu frontend
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
@@ -134,7 +134,7 @@ app.post('/api/signup', async (req, res) => {
     await newUser.save();
     res.status(201).json({ 
       success: true,
-      message: 'Usuario registrado correctamente' 
+      message: 'Usuario registrado exitosamente' 
     });
   } catch (error) {
     console.error('Error en el registro:', error);
@@ -218,6 +218,58 @@ app.get('/api/user-profile', verifyToken, async (req, res) => {
     res.status(500).json({ 
       success: false,
       message: 'Error en el servidor' 
+    });
+  }
+});
+
+//resetear contraseña
+app.post('/api/reset-password', async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    // Validar que se proporcionó un email
+    if (!email) {
+      return res.status(400).json({ 
+        success: false,
+        message: 'El correo electrónico es requerido' 
+      });
+    }
+
+    // Buscar el usuario por email
+    const user = await User.findOne({ email });
+    
+    // Si no existe el usuario, enviar error
+    if (!user) {
+      return res.status(404).json({ 
+        success: false,
+        message: 'No existe una cuenta con este correo electrónico' 
+      });
+    }
+
+    // Si el usuario existe, generamos un token temporal
+    const resetToken = jwt.sign(
+      { userId: user._id },
+      process.env.JWT_SECRET || 'tu_secreto_jwt',
+      { expiresIn: '1h' }
+    );
+
+    // Actualizar el usuario con el token de reseteo
+    user.resetPasswordToken = resetToken;
+    user.resetPasswordExpires = Date.now() + 3600000; // 1 hora
+    await user.save();
+
+    // Aquí podrías agregar el envío de email posteriormente
+    
+    res.json({
+      success: true,
+      message: 'Si el correo existe en nuestra base de datos, recibirás las instrucciones para restablecer tu contraseña'
+    });
+
+  } catch (error) {
+    console.error('Error en reset password:', error);
+    res.status(500).json({ 
+      success: false,
+      message: 'Error en el servidor al procesar la solicitud' 
     });
   }
 });

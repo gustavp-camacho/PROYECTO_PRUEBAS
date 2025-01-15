@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './PassFor.css';
 
+// Definimos la URL base de la API usando variables de entorno
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const ResetPassword = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
@@ -14,7 +17,7 @@ const ResetPassword = () => {
     setSuccess('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/reset-password', {
+      const response = await fetch(`${API_URL}/api/reset-password`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 
+
+// Definimos la URL base de la API usando variables de entorno
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -55,7 +59,7 @@ const Header = () => {
     try {
       localStorage.removeItem('searchResults');
       const response = await fetch(
-        `http://localhost:5000/api/events/search?query=${encodeURIComponent(searchQuery)}`,
+        `${API_URL}/api/events/search?query=${encodeURIComponent(searchQuery)}`,
         {
           method: 'GET',
           headers: {

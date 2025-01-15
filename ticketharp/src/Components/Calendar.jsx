@@ -3,6 +3,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+
+// Definimos la URL base de la API usando variables de entorno
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [events, setEvents] = useState({});
@@ -19,7 +23,7 @@ const Calendar = () => {
       const year = currentDate.getFullYear();
       const month = currentDate.getMonth() + 1;
       
-      const response = await fetch(`http://localhost:5000/api/events/calendar?year=${year}&month=${month}`, {
+      const response = await fetch(`${API_URL}/api/events/calendar?year=${year}&month=${month}`, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',

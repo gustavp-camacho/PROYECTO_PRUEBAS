@@ -3,6 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { X } from "lucide-react";
 import './Select_tickets.css';
 
+// Definimos la URL base de la API usando variables de entorno
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const ZONE_NAMES = {
   VIP: 'VIP',
   P_B_CEN: 'Platea Baja Central',
@@ -30,7 +33,7 @@ const Select_tickets = () => {
     const fetchEventData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/api/events/${eventId}`);
+        const response = await fetch(`${API_URL}/api/events/${eventId}`);
         const data = await response.json();
 
         if (!response.ok) {
