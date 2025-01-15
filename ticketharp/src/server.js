@@ -11,23 +11,8 @@ const { ObjectId } = mongoose.Types; // Importamos ObjectId correctamente
 
 
 // Inicializar la aplicación de Express
-//const app = express();
-//const PORT = process.env.PORT || 5000;
-
-const express = require('express');
-const { getFileFromS3 } = require('./s3Service');
 const app = express();
-const bucketName = 'nombre-de-tu-bucket';
-
-app.get('/api/getFile', async (req, res) => {
-    const fileKey = 'ruta/del/archivo.txt'; // Cambia a la ruta de tu archivo en S3
-    try {
-        const fileContent = await getFileFromS3(bucketName, fileKey);
-        res.json({ content: fileContent });
-    } catch (error) {
-        res.status(500).send('Error al obtener el archivo');
-    }
-});
+const PORT = process.env.PORT || 5000;
 
 // Middleware para analizar JSON y habilitar CORS
 app.use(express.json());
@@ -111,7 +96,7 @@ app.use((err, req, res, next) => {
 
 // Configura CORS específicamente
 const corsOptions = {
-  origin: '*', // Ajusta esto según tu frontend
+  origin: 'http://localhost:3000', // Ajusta esto según tu frontend
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
