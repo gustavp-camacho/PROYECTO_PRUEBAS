@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './Signup.css';
 
 // Definimos la URL base de la API usando variables de entorno
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_URL = process.env.REACT_APP_API_URL || 'http://18.216.192.185' || 'http://localhost:5000';
+
 
 const Signup = () => {
   const [email, setEmail] = useState('');

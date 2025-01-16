@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './login.css';
 
 // Definimos la URL base de la API usando variables de entorno
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL || 'http://18.216.192.185' || 'http://localhost:5000';
+
 //COMENTARIO DE QUE HE AJUSTADO MIS DIRECCIONES
 const Login = () => {
   const navigate = useNavigate();

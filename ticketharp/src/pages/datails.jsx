@@ -4,7 +4,7 @@ import { CreditCard } from "lucide-react";
 import './details.css';
 
 // Definimos la URL base de la API usando variables de entorno
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_URL = process.env.REACT_APP_API_URL || 'http://18.216.192.185' || 'http://localhost:5000';
 
 const PaymentProcess = () => {
   const { eventId } = useParams();
